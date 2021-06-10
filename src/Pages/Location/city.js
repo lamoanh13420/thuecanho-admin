@@ -16,7 +16,7 @@ export default class City extends Component {
         this.getCityList()
     }
     getCityList = (() => {
-        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListCity').then(
+        Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListCity').then(
             (res) => {
                 this.state.myCityList = res.data;
                 this.setState(this);

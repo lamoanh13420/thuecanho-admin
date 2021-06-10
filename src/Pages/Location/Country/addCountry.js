@@ -17,7 +17,7 @@ export default function AddCountry() {
     const onSubmit = (e) =>{
         e.preventDefault();          
         
-        Axios.post('https://thuecanho-admin.herokuapp.com/api/admin/addCountry', {
+        Axios.post('https://rental-apartment-huflit.herokuapp.com/api/admin/addCountry', {
             "countryName": country.countryName
         }).then((res)=>{
             console.log(res.data)

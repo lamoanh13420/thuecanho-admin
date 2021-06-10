@@ -13,7 +13,7 @@ const Report = () => {
     }, []);
 
     const loadData = async () => {
-        const result = await axios.get("https://thuecanho-admin.herokuapp.com/report");
+        const result = await axios.get("https://rental-apartment-huflit.herokuapp.com/report");
         setData(result.data.reverse());
     };
 

@@ -30,7 +30,7 @@ const EditReport = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`https://thuecanho-admin.herokuapp.com/report/${id}`, apartment);
+    await axios.put(`https://rental-apartment-huflit.herokuapp.com/report/${id}`, apartment);
     history.push("/");
   };
 

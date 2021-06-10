@@ -24,7 +24,7 @@ const AddTrending = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.post("https://thuecanho-admin.herokuapp.com/trending", apartment);
+        await axios.post("https://rental-apartment-huflit.herokuapp.com/trending", apartment);
         history.push("/");
     };
     return (

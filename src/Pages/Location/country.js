@@ -17,7 +17,7 @@ export default class Country extends Component {
         this.getCountryList()
     }
     getCountryList = (() => {
-        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListCountry').then(
+        Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListCountry').then(
             (res) => {
                 this.state.myCountryList = res.data;
                 this.setState(this);

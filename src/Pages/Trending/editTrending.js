@@ -29,7 +29,7 @@ const EditTrending = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`https://thuecanho-admin.herokuapp.com/trending/${id}`, apartment);
+    await axios.put(`https://rental-apartment-huflit.herokuapp.com/trending/${id}`, apartment);
     history.push("/");
   };
 

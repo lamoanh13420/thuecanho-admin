@@ -18,7 +18,7 @@ export default class Trending extends Component {
         this.getListApartment()
     }
     getListApartment = () => {
-        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListApartment').then(
+        Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListApartment').then(
             (res) => {
                 this.state.lstApartment = res.data;
                 this.setState(this);

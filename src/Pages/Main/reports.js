@@ -18,7 +18,7 @@ export default class Reports extends Component {
         this.getListOrder()
     }
     getListOrder = () => {
-        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListOrder').then(
+        Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListOrder').then(
             (res) => {
                 this.state.lstOrder = res.data;
                 this.setState(this);

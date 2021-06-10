@@ -15,7 +15,7 @@ export default class District extends Component {
         this.getDistrictList()
     }
     getDistrictList = (() => {
-        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListDistrict').then(
+        Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListDistrict').then(
             (res) => {
                 console.log(res.data)
                 this.state.myDistrictList = res.data;

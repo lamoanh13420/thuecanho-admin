@@ -11,8 +11,8 @@ export default function EditDistrict() {
         loadDistrict()
     },[])
     const loadDistrict = async() => {
-        const resDistrict = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getIdDistrict?id=${id}`)
-        const resCity = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getListCity`)
+        const resDistrict = await Axios.get(`https://rental-apartment-huflit.herokuapp.com/api/admin/getIdDistrict?id=${id}`)
+        const resCity = await Axios.get(`https://rental-apartment-huflit.herokuapp.com/api/admin/getListCity`)
         setDistrict({...district, districtName: resDistrict.data.TEN_QUAN})
         setCity({...city, selectedIdCity: resDistrict.data.ID_THANHPHO, lstCity: resCity.data})         
     }

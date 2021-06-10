@@ -9,7 +9,7 @@ const ViewAccount = () => {
         loadUser();
     }, []);
     const loadUser = async () => {
-        const res = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getAccountInfo?id=${id}`);
+        const res = await Axios.get(`https://rental-apartment-huflit.herokuapp.com/api/admin/getAccountInfo?id=${id}`);
         setUser(res.data);
     };
     return (

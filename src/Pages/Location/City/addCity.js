@@ -13,7 +13,7 @@ export default class AddCity extends Component {
   }
 
   getCountryList = (() => {
-    Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListCountry').then(
+    Axios.get('https://rental-apartment-huflit.herokuapp.com/api/admin/getListCountry').then(
       (res) => {
         this.state.lstCountry = res.data;
         this.setState(this);
@@ -31,7 +31,7 @@ export default class AddCity extends Component {
   onSubmit = (e) => {
     const { history } = this.props
     e.preventDefault();
-    Axios.post('https://thuecanho-admin.herokuapp.com//api/admin/addCity', {
+    Axios.post('https://rental-apartment-huflit.herokuapp.com//api/admin/addCity', {
       "cityName": this.state.cityName,
       "idCountry": this.state.idCountry.toString(),
     }).then((res) => {

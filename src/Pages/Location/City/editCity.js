@@ -11,8 +11,8 @@ export default function EditCity() {
         loadCity()
     },[])
     const loadCity = async() => {
-        const resCity = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getIdCity?id=${id}`) // Gọi Api getIdCity + id để lấy Danh sách Thành phố
-        const resCountry = await Axios.get(`https://thuecanho-admin.herokuapp.com/api/admin/getListCountry`) //  Gọi Api getListCountry để lấy Danh sách Quốc gia cho <select>
+        const resCity = await Axios.get(`https://rental-apartment-huflit.herokuapp.com/api/admin/getIdCity?id=${id}`) // Gọi Api getIdCity + id để lấy Danh sách Thành phố
+        const resCountry = await Axios.get(`https://rental-apartment-huflit.herokuapp.com/api/admin/getListCountry`) //  Gọi Api getListCountry để lấy Danh sách Quốc gia cho <select>
         setCity({...city, cityName: resCity.data.TEN_THANHPHO}) // Đổ dữ liệu vào cityName (theo id) để hiển thị trong <input value={city.cityName}>
         setCountry({...country, selectedIdCountry: resCity.data.ID_QUOCGIA, lstCountry: resCountry.data}) // Đổ dữ liệu vào [selectedIdCountry để hiển thị trong <select value = {country.selectedIdCountry} ,lstCountry để hiển thị Danh sách Quốc gia để chọn 1 Quốc gia] trong <select>  
     }
