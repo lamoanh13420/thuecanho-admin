@@ -1,49 +1,99 @@
-// import { iam } from "googleapis/build/src/apis/iam";
-import React, { useState } from "react";
-import {ImageData} from '../../StaticData/imageData'
-const Trending = () => {
-	const [ selectedFiles, setSelectedFiles ] = useState([]);
+import Axios from 'axios'
+import React, { Component } from 'react'
+import{Link} from 'react-router-dom'
+import * as FaIcon from "react-icons/fa"
 
-	const handleImageChange = (e) => {
-		// console.log(e.target.files[])
-		if (e.target.files) {
-			const filesArray = Array.from(e.target.files).map((file) => URL.createObjectURL(file));
+import Navbar from '../../Components/navbar'
+import TitlePages from '../../Components/titlePages'
 
-			// console.log("filesArray: ", filesArray);
+export default class Trending extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            lstApartment: []
+        }
+        this.getListApartment()
+    }
+    componentDidUpdate() {
+        this.getListApartment()
+    }
+    getListApartment = () => {
+        Axios.get('https://thuecanho-admin.herokuapp.com/api/admin/getListApartment').then(
+            (res) => {
+                this.state.lstApartment = res.data;
+                this.setState(this);
+            }
+        );
+    }
+    render() {
+        return (
+            <>
+            <div className="sticky-top">               
+                    <Navbar />
+                </div>
+            <div className="container">
+                <div className="py-4">
+                <TitlePages title="QUẢN LÝ TRENDING"/>
+                    <div className="row">
+                        <div className="col">
+                            <Link className="btn btn-primary" to={`/trending/add`}>Thêm</Link>
+                        </div>
+                        
+                        <div className="col">
+                            <div className="input-group mb-3">
+                                <input type="text" className="form-control" placeholder="Tìm kiếm" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-primary" type="button"><FaIcon.FaSearch /></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="table-responsive-sm">
+                    <table className="table border shadow">
+                        <thead className="thead-dark">
+                            <tr>
+                            <th>Action</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Chủ hộ</th>
+                                <th scope="col">Tên nhà</th>
+                                <th scope="col">Check in</th>
+                                <th scope="col">Check out</th>
+                                <th scope="col">Số nhà</th>
+                                <th scope="col">Tên đường</th>
+                                <th scope="col">Diện tích</th>
+                                <th scope="col">Quận</th>
+                                <th scope="col">Số người</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.lstApartment.map((val, index) => (
+                                <tr>
+                                    <th scope="row">{val.ID_NHA}</th>
+                                    <td>{val.ID_TT_CHUHO}</td>
+                                    <td>{val.TEN_NHA}</td>
+                                    <td>{val.CHECKIN}</td>
+                                    <td>{val.CHECKOUT}</td> 
+                                    {/* <td>{val.KHOANGCHACH_TRUNGTAMTP}</td> */}
+                                    {/* <td>{val.SOTANG}</td> */}
+                                    <td>{val.SONHA}</td>
+                                    <td>{val.TEN_DUONG}</td>
+                                    <td>{val.DIENTICH}</td>
+                                    <td>{val.ID_QUAN}</td>
+                                    <td>{val.SO_NGUOI}</td>
+                                    <td>
+                                        <Link className="btn btn-info" to={`trending/${val.ID_NHA}`}>View</Link>
+                                        <Link className="btn btn-outline-primary" to={`trending/edit/${val.ID_NHA}`}>Edit</Link>
+                                        {/* <Link class="btn btn-danger" onClick={() => deleteReport({val.ID_DATCANHO})}>Delete</Link> */}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            </>
+        )
+    }
+}
 
-			setSelectedFiles((prevImages) => prevImages.concat(filesArray));
-			Array.from(e.target.files).map(
-				(file) => URL.revokeObjectURL(file) // avoid memory leak
-			);
-		}
-	};
-
-	const renderPhotos = (source) => {
-		console.log('source: ', source);
-		return source.map((photo) => {
-			return <img src={photo} alt="" key={photo} />;
-		});
-	};
-
-	return (
-		<div className="app">
-			<div className="heading">Trending Page</div>
-			<div>
-				<input type="file" id="file" multiple onChange={handleImageChange} />
-				<div className="label-holder">
-					<label htmlFor="file" className="label">
-						<i className="btn btn-outline-info">ADD</i>
-					</label>
-				</div>
-				<div className="result">{renderPhotos(selectedFiles)}</div>
-				{ImageData.map((item) => (               
-					<img src={item.imagePath} alt=""/>
-                ))}								
-			</div>
-		</div>
-	);
-};
-
-
-
-export default Trending;

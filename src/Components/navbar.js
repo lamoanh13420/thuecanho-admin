@@ -19,12 +19,12 @@ export default class Navbar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/trending"><FaIcon.FaSortAmountUp className="mx-1" />Trending</Link>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link className="nav-link" to="/review"><FaIcon.FaStarHalfAlt className="mx-1" />Đánh giá</Link>
-                                </li>
-                                <li className="nav-item">
+                                </li> */}
+                                {/* <li className="nav-item">
                                     <Link className="nav-link" to="/report"><FaIcon.FaFileAlt className="mx-1" />Báo cáo</Link>
-                                </li>
+                                </li> */}
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/location"><FaIcon.FaCity className="mx-1" />Vị trí</Link>
                                 </li>
