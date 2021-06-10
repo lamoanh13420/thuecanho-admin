@@ -1,0 +1,127 @@
+h2{
+    color: #585e61;
+    font-weight: 500;
+}
+
+.box{
+ width: 300px;
+ padding: 14px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background: white;
+ text-align: center;
+ border-radius: 12px;
+}
+.box-login{
+    padding: 4px;
+}
+.box-login span{
+    text-align: left;
+    display: block;
+    color: #585e61;
+    margin: 2px auto;
+    font-weight: 500;
+}
+.box-login input[type='email'],.box input[type='password']{
+    border: 0;
+    background: none;
+    text-align: center;
+    border: 2px solid #6e7679;
+    width: 100%;
+    outline: none;
+    color: #585e61;
+    border-radius: 4px;
+    transition: 0.25s;
+    margin: 2px auto;
+}
+
+.box-login input[type ='email']:focus,.box-login input[ type='password']:focus{
+    border-color: #cfd1d2;
+}
+.box input[type='submit']{
+    border: 0;
+    background:#E99820;
+    text-align: center;
+    border: 2px solid ;
+    padding: 8px 10px;
+    width: 100%;
+    outline: none;
+    color: white;
+    border-radius: 12px;
+}
+.box input[type='submit']:hover{
+    background: #ba7a1a;
+}
+
+
+
+.bg-login{
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+    height: 100vh;
+    min-height: 100vh;
+}
+.form-login{
+    width: 250px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    text-align: center;
+    border-radius: 12px;
+}
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #40aecf;
+    border-bottom: solid #ff9823; 
+}
+.form-inner {
+    padding: 0 2px;
+}
+.form-content{
+    margin: 8px 0;
+}
+.form-label{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #40aecf;
+    text-align: left;
+    margin-bottom: 2px;
+}
+.form-input{
+    width: 100%;
+    border: solid 2px #94daef;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 1px;
+    transition: 0.5s;
+    color: #155466;
+}
+.form-input:focus{
+    box-shadow: 4px 4px #bee8f6;
+}
+.form-button{
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 6px 0px;
+    background: #ff9823;
+    color: white;
+    transition: 0.5s;
+}
+.form-button:hover{
+    cursor: pointer;
+    background: #f08b19;
+}
