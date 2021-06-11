@@ -48,12 +48,12 @@ export default class AddDistrict extends Component {
             <h2 className="text-center mb-4">Add District</h2>
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label>District's Name</label>
+                <label>District's Name {this.state.districtName}</label>
                 <input type="text" className="form-control form-control-lg" name="districtName" onChange={this.changeDistrict} />
               </div>
 
               <div className="form-group">
-                <label>City</label>
+                <label>City {this.state.idCity}</label>
                 <select className="form-control form-control-lg" value={this.state.idCity} onChange={this.changeCity}>
                   {this.state.lstCity.map((val, index) =>
                     <option key={val.ID_THANHPHO} value={val.ID_THANHPHO}>{val.TEN_THANHPHO}</option>
