@@ -41,12 +41,12 @@ export default function EditDistrict() {
                         <label>ID: {id}</label>
                     </div>
                     <div className="form-group">
-                        <label>Tên Quận: {district.districtName}</label>
+                        <label>Tên Quận: </label>
                         <input type="text" className="form-control form-control-lg" name="districtName" onChange={changeDistrict} value={district.districtName}/>
                     </div>
                     <div className="form-group">
-                        <label>Thành phố: {city.selectedCity}</label>
-                        <select className="form-control form-control-lg" value={city.selectedCity} onChange={changeCity}>
+                        <label>Thành phố: </label>
+                        <select className="form-control form-control-lg" value={city.selectedIdCity} onChange={changeCity}>
                             {city.lstCity.map((val, index) =>
                                 <option key={val.ID_THANHPHO} value={val.ID_THANHPHO}>{val.TEN_THANHPHO}</option>
                             )}
