@@ -5,7 +5,7 @@ export default class AddDistrict extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      idCity: 0,
+      idCity: 1,
       lstCity: [],
       districtName: ""
     }
@@ -55,7 +55,6 @@ export default class AddDistrict extends Component {
               <div className="form-group">
                 <label>Thành phố</label>
                 <select className="form-control form-control-lg" value={this.state.idCity} onChange={this.changeCity}>
-                  <option value={this.state.idCity}>--Chọn Thành phố--</option>
                   {this.state.lstCity.map((val, index) =>
                     <option key={val.ID_THANHPHO} value={val.ID_THANHPHO}>{val.TEN_THANHPHO}</option>
                   )}
