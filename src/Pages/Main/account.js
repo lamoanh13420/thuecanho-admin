@@ -5,7 +5,7 @@ import * as FaIcon from 'react-icons/fa'
 
 import Navbar from '../../Components/navbar'
 import TitlePages from '../../Components/titlePages'
-import EditAccount from '../Account/editAccount'
+// import EditAccount from '../Account/editAccount'
 // import AddAccount from '../Account/addAccount'
 class Account extends Component {
     constructor(props) {

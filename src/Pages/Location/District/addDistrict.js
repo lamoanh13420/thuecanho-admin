@@ -45,23 +45,24 @@ export default class AddDistrict extends Component {
       <div>
         <div className="container">
           <div className="w-75 mx-auto shadow p-5">
-            <h2 className="text-center mb-4">Add District</h2>
+            <h2 className="text-center mb-4">Thêm Quận</h2>
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label>District's Name</label>
+                <label>Tên Quận</label>
                 <input type="text" className="form-control form-control-lg" name="districtName" onChange={this.changeDistrict} />
               </div>
 
               <div className="form-group">
-                <label>City</label>
+                <label>Thành phố</label>
                 <select className="form-control form-control-lg" value={this.state.idCity} onChange={this.changeCity}>
+                  <option value={this.state.idCity}>--Chọn Thành phố--</option>
                   {this.state.lstCity.map((val, index) =>
                     <option key={val.ID_THANHPHO} value={val.ID_THANHPHO}>{val.TEN_THANHPHO}</option>
                   )}
                 </select>
               </div>
 
-              <button className="btn btn-warning btn-block text-white">Add District</button>
+              <button className="btn btn-warning btn-block text-white">Thêm</button>
             </form>
           </div>
         </div>
