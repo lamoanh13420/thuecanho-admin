@@ -16,9 +16,9 @@ export default class Navbar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/account"><FaIcon.FaUserAlt className="mx-1" />Tài khoản</Link>
                                 </li>             
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link className="nav-link" to="/trending"><FaIcon.FaSortAmountUp className="mx-1" />Trending</Link>
-                                </li>
+                                </li> */}
                                 {/* <li className="nav-item">
                                     <Link className="nav-link" to="/review"><FaIcon.FaStarHalfAlt className="mx-1" />Đánh giá</Link>
                                 </li> */}

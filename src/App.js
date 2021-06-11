@@ -52,9 +52,9 @@ class App extends Component {
             <Route exact path="/location/district/add" component={AddDistrict} />
             <Route exact path="/location/district/edit/:id" component={EditDistrict} />
 
-            <Route exact path="/trending" component={Trending} />
+            {/* <Route exact path="/trending" component={Trending} />
             <Route exact path="/trending/edit/:id" component={EditTrending} />
-    <Route exact path="/trending/add/" component={AddTrending} />
+    <Route exact path="/trending/add/" component={AddTrending} /> */}
             
             {/* <Route exact path="/report/add" component={AddReport} />
             <Route exact path="/report/edit/:id" component={EditReport}/>
