@@ -22,7 +22,7 @@ const EditAccount = () => {
         setRole({...role, selectedRole: e.target.value })
     }
     const onSubmit = () => {    
-        Axios.post(`https://admin-tch.herokuapp.com/api/admin/updateAccount?id=${id}`, {
+        Axios.post(`https://rental-apartment-huflit.herokuapp.com/api/admin/updateAccount?id=${id}`, {
             "username": account.username,
             "password": account.password,
             "role": role.selectedRole
