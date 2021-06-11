@@ -23,7 +23,7 @@ export default function EditCity() {
         setCountry ({...country, selectedIdCountry: e.target.value})
     }
     const onSubmit = () => {    
-        Axios.post(`http://localhost:33456/api/admin/updateCity?id=${id}`, {
+        Axios.post(`https://rental-apartment-huflit.herokuapp.com/api/admin/updateCity?id=${id}`, {
             "cityName": city.cityName,
             "idCountry": country.selectedIdCountry.toString(),
         }).then((res) => {

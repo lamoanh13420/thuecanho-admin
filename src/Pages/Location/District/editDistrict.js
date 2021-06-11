@@ -23,7 +23,7 @@ export default function EditDistrict() {
         setCity ({...city, selectedIdCity: e.target.value})
     }
     const onSubmit = () => {    
-        Axios.post(`http://localhost:33456/api/admin/updateDistrict?id=${id}`, {
+        Axios.post(`https://rental-apartment-huflit.herokuapp.com/api/admin/updateDistrict?id=${id}`, {
             "districtName": district.districtName,
             "idCity": city.selectedIdCity.toString()
         }).then((res) => {
